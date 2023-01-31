@@ -1,0 +1,1 @@
+{"x->y": ["science_qa", "logic_qa", "social_context_qa", "commonsense_qa", "paraphrase", "hate_speech", "linguistic"], "y->x": ["sentiment_analysis", "nli", "topic", "emotion"]}
