@@ -1,11 +1,11 @@
 # Large Language Models Are Implicitly Topic Models: Explaining and Finding Good Demonstrations for In-Context Learning
 
+This is the official repository of the paper [Large Language Models Are Implicitly Topic Models: Explaining and Finding Good Demonstrations for In-Context Learning](https://arxiv.org/abs/2301.11916).
+A large portion of the code is based on the [MetaICL codebase](https://github.com/facebookresearch/MetaICL).
 
 ## Preparation
 
 The code is tested with python 3.8.
-
-A large portion of the code is based on the [MetaICL codebase](https://github.com/facebookresearch/MetaICL).
 
 Install the data dependencies and download the data.
 ```bash
