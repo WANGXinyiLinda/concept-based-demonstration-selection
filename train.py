@@ -53,9 +53,6 @@ def main(logger, args):
             logger.info("[Train] %s\t%d" % (k, v))
         logger.info("%s on %s (%d train)" % (args.method, args.dataset, len(train_counter)))
 
-    if args.init_checkpoint is not None:
-        assert os.path.exists(args.init_checkpoint)
-
     ######### load tensorize data
     metaicl_data = MetaICLData(logger, args.gpt2, args.method, args.use_demonstrations,
                                args.test_k, max_length, max_length_per_example,
@@ -96,7 +93,7 @@ def main(logger, args):
     with open(os.path.join(args.out_dir, 'task2token.json'), 'w') as f:
         json.dump(metaicl_data.prefix_token_ids, f, ensure_ascii=False)
 
-    metaicl_model = MetaICLModel(args.init_checkpoint, args.gpt2, logger, 
+    metaicl_model = MetaICLModel(args.gpt2, logger, 
         args.out_dir, args.fp16, args.local_rank, True, args.n_prefix_tokens,
         prefix_embed_file=args.prefix_embed_file, task_counts=train_counter)
     metaicl_model.to_device()
@@ -131,7 +128,6 @@ if __name__=='__main__':
     parser.add_argument("--warmup_steps", type=int, default=0)
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--num_training_steps", type=int, default=10000)
-    parser.add_argument("--init_checkpoint", type=str, default=None)
     parser.add_argument("--weight_decay", type=float, default=0.0)
     parser.add_argument("--no_masking", default=False, action="store_true")
     parser.add_argument("--use_random_english_words", default=False, action="store_true")

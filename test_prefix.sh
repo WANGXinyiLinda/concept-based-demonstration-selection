@@ -15,8 +15,7 @@ CUDA_VISIBLE_DEVICES=2 python test.py\
     --method $TEST_METHOD\
     --test_batch_size 16\
     --out_dir out/$MODEL-prefix\
-    --data_dir $ICL_DATA_DIR\
     --n_prefix_tokens $N_PREFIX\
     --use_soft_prefix\
-    --prefix_embed_file $ICL_OUT_DIR/checkpoints/gpt2-large/$TRAIN_TASK-$SPLIT/prefix={$N_PREFIX}-{$TRAIN_METHOD}-lr={$LR}-initByVocab/soft_embeddings-$STEP.pt\
+    --prefix_embed_file checkpoints/gpt2-large/$TRAIN_TASK-$SPLIT/prefix={$N_PREFIX}-{$TRAIN_METHOD}-lr={$LR}-initByVocab/soft_embeddings-$STEP.pt\
     # --seed 100\

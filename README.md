@@ -3,6 +3,8 @@
 This is the official repository of the paper [Large Language Models Are Implicitly Topic Models: Explaining and Finding Good Demonstrations for In-Context Learning](https://arxiv.org/abs/2301.11916).
 A large portion of the code is based on the [MetaICL codebase](https://github.com/facebookresearch/MetaICL).
 
+![Method](img/method.png)
+
 ## Preparation
 
 The code is tested with python 3.8.
@@ -36,18 +38,10 @@ pip install sentence-transformers
 pip install openai
 ```
 
-Before running the scripts, you need to set a few environment variables in `.bashrc` under your home directory:
-```
-# MetaICL variables
-export ICL_DATA_DIR="./data/"
-export ICL_OUT_DIR="./"
-```
-These two directory will be used to store the data and model checkpoints/outputs. You use other directories by changing their values.
-
 ## Latent concept learning
 
-To obtain the "concept" tokens, please first run the script `tensorize.sh`, then run the script `train.sh`. We simutaniously train a set of datasets together and obtain separate concept tokens for each datasets. This set of datasets is called a `$TASK`. Currently, we define 3 tasks: glue, diverse and tune. You can see what datasets are contained in each task by inspecting the corresponding `.json` file in `./config`. The concept tokens of these 3 tasks will be stored in `./checkpoints`.
+To obtain the "concept" tokens, please first run the script `tensorize.sh`, then run the script `train.sh`. We simutaniously train a set of datasets together and obtain separate concept tokens for each datasets. This set of datasets is called a `$TASK`. Currently, we define 3 tasks: glue, diverse and tune. You can see what datasets are contained in each task by inspecting the corresponding `.json` file in `./config`. The concept tokens of these 3 tasks will be stored in `./checkpoints`. We also provide some example concept token embeddings in `./checkpoints` to reproduce our results.
 
 ## Demonstration selection
 
-To obtain performance on test set by using different way to choose the in-context examples, you can use `prior.sh`. `--prior easiest` means choosing the examples that can most likely infer the learned concept tokens.  `--prior most_similar` means choosing the examples that are most similar to the test input.  By commenting out the `--prior` line, examples will be chosen uniformly. More details of each argument can be found in `test.py`. In `archive`, we provide the value of bash script variables to reproduce our results.
+To obtain performance on test set by using different way to choose the in-context examples, you can use `prior.sh`. `--prior easiest` means choosing the examples that can most likely infer the learned concept tokens.  `--prior most_similar` means choosing the examples that are most similar to the test input.  By commenting out the `--prior` line, examples will be chosen uniformly. More details of each argument can be found in `test.py`. In `variables`, we provide the value of bash script variables to reproduce our results.

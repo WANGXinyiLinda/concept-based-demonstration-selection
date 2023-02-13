@@ -1,11 +1,5 @@
 import os
 import json
-# commands = ['python search_qa.py --do_test --train_k 16384 --test_k 16', 
-# 'python spider.py --do_test --train_k 16384 --test_k 16', 
-# 'python amazon_polarity.py --do_test --train_k 16384 --test_k 16', 
-# 'python dbpedia_14.py --do_test --train_k 16384 --test_k 16', 
-# 'python yahoo_answers_topics.py --do_test --train_k 16384 --test_k 16', 
-# 'python yelp_review_full.py --do_test --train_k 16384 --test_k 16']
 
 commands = []
 with open('../config/tune.json') as f:
