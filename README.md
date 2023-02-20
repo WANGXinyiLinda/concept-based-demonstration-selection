@@ -40,7 +40,7 @@ pip install openai
 
 ## Latent concept learning
 
-To obtain the "concept" tokens, please first run the script `tensorize.sh`, then run the script `train.sh`. We simutaniously train a set of datasets together and obtain separate concept tokens for each datasets. This set of datasets is called a `$TASK`. Currently, we define 3 tasks: glue, diverse and tune. You can see what datasets are contained in each task by inspecting the corresponding `.json` file in `./config`. The concept tokens of these 3 tasks will be stored in `./checkpoints`. We also provide some example concept token embeddings in `./checkpoints` to reproduce our results.
+To obtain the "concept" tokens, please first run the script `tensorize.sh`, then run the script `train.sh`. We simutaniously train a set of datasets together and obtain separate concept tokens for each datasets. This set of datasets is called a `$TASK`. Currently, we define 3 tasks: glue, diverse and tune. You can see what datasets are contained in each task by inspecting the corresponding `.json` file in `./config`. The concept tokens of these 3 tasks will be stored in `./checkpoints`. We also provide some example concept token embeddings at [this Google drive folder](https://drive.google.com/drive/folders/1NVerCcvpn15bRyB5gVJcp0U1BcAOM3sM?usp=share_link) to reproduce our results.
 
 ## Demonstration selection
 
