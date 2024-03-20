@@ -575,7 +575,7 @@ def main(logger, args):
                 np.save(os.path.join(save_path, f'{args.split}-gt.npy'), gt_label)
                 np.save(os.path.join(save_path, f'{args.split}-nll.npy'), nll)
                 np.save(os.path.join(save_path, f'{args.split}-acc.npy'), acc)
-train_size
+
             all_predictions.append(pred)
             logger.info("%s task (seed=%s): Macro-F1: %.1f, Accuracy: %.1f" % 
                 (args.task, seed, 100*f1, 100*acc))
